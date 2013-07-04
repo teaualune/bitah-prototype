@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/cssnormalize-min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/cssgrids-min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    </head>
+    <body class="yui3-g">
+        <div class="yui3-u panel">
+            <ul class="card-class">
+                <li>
+                    <span>NTU</span>
+                </li>
+                <li>
+                    <span>BITAH</span>
+                </li>
+                <li>
+                    <span>Yahoo!</span>
+                </li>
+            </ul>
+            <ul class="tags">
+                <li>
+                    <span>Table Tennis</span>
+                </li>
+                <li>
+                    <span>NTU</span>
+                </li>
+                <li>
+                    <span>Girl</span>
+                </li>
+            </ul>
+        </div>
+        <div class="yui3-u page">
+            <div class="nav">
+                <a class="main-panel" href="#">
+                    <span>≡</span>
+                </a>
+                <a class="tag-panel" href="#">
+                    <span>Tags</span>
+                </a>
+                <form>
+                    <input class="search" type="search" />
+                    <input type="submit" value="Search" />
+                </form>
+            </div>
+            <div class="main">
+                <ul class="cardbox clearfix">
+                    <li class="selected">A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+                <div class="cards yui3-g">
+                    <% for (var i = 0; i < people.length; i ++) { %>
+                        <div class="yui3-u">
+                            <h3><%= people[i].name %></h3>
+                            <h5><%= people[i].company %></h5>
+                            <h5><%= people[i].position %></h5>
+                        </div>
+                    <% } %>
+                    <p class="yui3-u">
+                        <i></i>
+                        <span class="content">
+                            <span class="name"></span>
+                            <span class="company"></span>
+                            <span class="position"></span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var people = [], i = 0;
+            <% for (var i = 0; i < people.length; i ++) { %>
+                people[i] = {
+                    name: '<%= people[i].name %>',
+                    company: '<%= people[i].company %>',
+                    position: '<%= people[i].position %>'
+                };
+                i++;
+            <% } %>
+        </script>
+        <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+        <script type="text/javascript" src="/javascripts/main.js"></script>
+    </body>
+</html>
