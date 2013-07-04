@@ -2,6 +2,13 @@ body {
   font-family: "Century Gothic", "Helvetica Light", Arial, sans-serif;
   color: #333;
 }
+body,
+html,
+.panel,
+.page {
+  height: 100%;
+  background-color: #eee;
+}
 a {
   color: #6e6e6e;
   text-decoration: none;
@@ -102,7 +109,6 @@ ul {
 }
 .cards {
   position: relative;
-  background-color: #eee;
 }
 .cards div {
   width: 170px;
