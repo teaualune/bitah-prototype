@@ -4,7 +4,10 @@ body {
 }
 
 a {
-    color: #00B7FF;
+    color: #6e6e6e;
+    &:hover {
+        color: #aaa;
+    }
     text-decoration: none;
 }
 
@@ -27,9 +30,21 @@ ul {
 .panel {
     width: 0;
     -webkit-transition: width 0.3s;
+
     ul {
-        visibility: hidden;
+        display: none;
+        list-style: none;
         opacity: 0;
+    }
+
+    li {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .title {
+        // height: 3em;
     }
 }
 
@@ -54,13 +69,14 @@ ul {
     }
 
     form {
-        margin: 0 20px;
+        margin-left: 50px;
         display: inline-block;
     }
 
     input {
         border: 0;
         padding: 0 5px;
+        font-size: 75%;
     }
 
     .search {
@@ -80,7 +96,7 @@ ul {
         width: 20%;
 
         & ul.reveal {
-            visibility: visible;
+            display: block;
             opacity: 1;
             -webkit-transition: opacity 0.1s 0.2s;
         }
@@ -92,16 +108,6 @@ ul {
     }
 }
 
-.panel ul {
-    list-style: none;
-
-    li {
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-    }
-}
-
 .cardbox {
     background-color: #cdcdcd;
 
@@ -110,11 +116,16 @@ ul {
         float: left;
         min-width: 160px;
         text-align: center;
-        padding: 10px 0;
 
         &:hover, &.selected {
             background-color: #eee;
         }
+    }
+
+    a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
     }
 }
 
