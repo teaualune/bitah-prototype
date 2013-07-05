@@ -2,14 +2,7 @@
 
 (function () {
 
-    var expandIndex = -1,
-        pIndex = {
-            index: 0,
-            next: function () {
-                console.log(this);
-                this.index = (this.index + 1) % 2;
-            } 
-        };
+    var expandIndex = -1;
 
     $('.main-panel').click(function (event) {
         if (!$('.tags').hasClass('reveal')) {
@@ -30,45 +23,36 @@
     $('.cards').delegate('div', 'click', function (event) {
         if (!$('.container').hasClass('reveal-panel')) {
             var div = $(event.currentTarget),
-                p = $('.cards p').eq(pIndex.index),
+                p = $('.cards p').eq(0),
                 arrow = $('.cards i'),
                 y = div.position().top + div.height() + 25,
                 x = div.position().left + div.width() / 2 + 5,
                 newIndex = $('.cards div').index(div);
 
             arrow.removeClass('trans');
-            // div.addClass('trans');
+            div.addClass('trans');
 
             if (expandIndex !== newIndex && p.hasClass('expand')) {
                 var prevDIV = $('.cards div').eq(expandIndex);
-                // div.removeClass('trans');
-                // prevDIV.removeClass('trans');
+                div.removeClass('trans');
+                prevDIV.removeClass('trans');
                 if (div.position().top === prevDIV.position().top) {
                     // horizontal move
                     arrow.addClass('trans');
+                } else if (div.position().top >= prevDIV.position().top) {
+                    // move down
+                    y = y - p.height();
+                    p.css('top', y);
                 } else {
-                    // prevDIV.addClass('trans');
-                    pIndex.next();
-                    var p2 = $('.cards p').eq(pIndex.index),
-                        y2;
-
-                    if (div.position().top >= prevDIV.position().top) {
-                        // move down
-                        y = y - p.height();
-                    }
-                    y2 = y;
-                    y = prevDIV.position().top + prevDIV.height() + 25;
-
-                    p2.css('top', y2);
-                    p2.toggleClass('expand');
+                    // move up
+                    p.css('top', y);
                 }
                 prevDIV.toggleClass('active');
             } else {
-                // p.toggleClass('expand');
+                p.css('top', y);
+                p.toggleClass('expand');
             }
 
-            p.css('top', y);
-            p.toggleClass('expand');
             arrow.css('left', x);
             div.toggleClass('active');
             expandIndex = newIndex;
