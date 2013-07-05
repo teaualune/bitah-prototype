@@ -22,9 +22,6 @@ ul {
   padding: 0;
   list-style: none;
 }
-.body {
-  overflow-x: hidden;
-}
 .clearfix {
   zoom: 1;
 }
@@ -34,6 +31,30 @@ ul {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+.body {
+  overflow-x: hidden;
+}
+.body.reveal-panel {
+  overflow-y: hidden;
+}
+.body.reveal-panel .container {
+  padding-left: 200px;
+  margin-right: -200px;
+}
+.body.reveal-panel .panel {
+  width: 200px;
+  -webkit-transition: width 0.5s;
+  margin-left: -200px;
+}
+.body.reveal-panel .panel ul.reveal {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s 0.3s;
+}
+.body.reveal-panel .page {
+  opacity: 0.3;
 }
 .panel {
   width: 0;
@@ -54,24 +75,6 @@ ul {
 }
 .page {
   width: 100%;
-}
-.reveal-panel {
-  padding-left: 200px;
-  margin-right: -200px;
-}
-.reveal-panel .panel {
-  width: 200px;
-  -webkit-transition: width 0.5s;
-  margin-left: -200px;
-}
-.reveal-panel .panel ul.reveal {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  -webkit-transition: opacity 0.2s 0.3s;
-}
-.reveal-panel .page {
-  opacity: 0.3;
 }
 .nav {
   width: 100%;

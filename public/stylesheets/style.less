@@ -10,10 +10,11 @@ body, html, .body, .panel, .page {
 
 a {
     color: #6e6e6e;
+    text-decoration: none;
+
     &:hover {
         color: #aaa;
     }
-    text-decoration: none;
 }
 
 ul {
@@ -22,18 +23,45 @@ ul {
     list-style: none;
 }
 
-.body {
-    overflow-x: hidden;
-}
-
 .clearfix {
     zoom: 1;
+
     &::after {
         content: ".";
         display: block;
         height: 0;
         clear: both;
         visibility: hidden;
+    }
+}
+
+.body {
+    overflow-x: hidden;
+
+    &.reveal-panel {
+        overflow-y:hidden;
+
+        .container {
+            padding-left: 200px;
+            margin-right: -200px;
+        }
+
+        .panel {
+            width: 200px;
+            -webkit-transition: width 0.5s;
+            margin-left: -200px;
+
+            & ul.reveal {
+                visibility: visible;
+                height: auto;
+                opacity: 1;
+                -webkit-transition: opacity 0.2s 0.3s;
+            }
+        }
+
+        .page {
+            opacity: 0.3;
+        }
     }
 }
 
@@ -61,27 +89,6 @@ ul {
 .page {
     width: 100%;
     // -webkit-transition: width 0.3s;
-}
-
-.reveal-panel {
-    padding-left: 200px;
-    margin-right: -200px;
-    .panel {
-        width: 200px;
-        -webkit-transition: width 0.5s;
-        margin-left: -200px;
-
-        & ul.reveal {
-            visibility: visible;
-            height: auto;
-            opacity: 1;
-            -webkit-transition: opacity 0.2s 0.3s;
-        }
-    }
-
-    .page {
-        opacity: 0.3;
-    }
 }
 
 .nav {
