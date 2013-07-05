@@ -2,7 +2,8 @@
 
 (function () {
 
-    var expandIndex = -1;
+    var expandIndex = -1,
+        div = null;
 
     $('.main-panel').click(function (event) {
         if (!$('.tags').hasClass('reveal')) {
@@ -22,8 +23,9 @@
 
     $('.cards').delegate('div', 'click', function (event) {
         if (!$('.body').hasClass('reveal-panel')) {
-            var div = $(event.currentTarget),
-                p = $('.cards p').eq(0),
+            div = $(event.currentTarget);
+
+            var p = $('.cards p').eq(0),
                 arrow = $('.cards i'),
                 y = div.position().top + div.height() + 25,
                 x = div.position().left + div.width() / 2 + 5,
@@ -69,7 +71,19 @@
     });
 
     $(window).resize(function (event) {
-        console.log(event);
+        if (div && div.hasClass('active')) {
+            var p = $('.cards p').eq(0),
+                y = div.position().top + div.height() + 25,
+                x = div.position().left + div.width() / 2 + 5,
+                arrow = $('.cards i');
+
+            if (Math.abs(p.position().top - y) > 1) {
+                p.css('top', y);
+            }
+            if (Math.abs(arrow.position().left - x) > 1) {
+                arrow.css('left', x);
+            }
+        }
     });
 
     $('.page').click(function () {
