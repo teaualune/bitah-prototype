@@ -6,92 +6,96 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/cssgrids-min.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     </head>
-    <body class="yui3-g">
-        <div class="yui3-u panel">
-            <ul class="card-class">
-                <li class="title">
-                    <h2>Identities</h2>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>NTU</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>BITAH</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>Yahoo!</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="tags">
-                <li class="title">
-                    <h2>Tags</h2>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>Table Tennis</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>NTU</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <span>Girl</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="yui3-u page">
-            <div class="nav">
-                <a class="main-panel" href="javascript:void(0)">
-                    <span>≡</span>
-                </a>
-                <a class="tag-panel" href="javascript:void(0)">
-                    <span>Tags</span>
-                </a>
-                <form>
-                    <input class="search" type="search" />
-                    <input type="submit" value="Search" />
-                </form>
-            </div>
-            <div class="main">
-                <ul class="cardbox clearfix">
-                    <li class="selected">
-                        <a href="javascript:void(0)">A</a>
+    <body>
+        <div class="body">
+        <div class="container yui3-g">
+            <div class="yui3-u panel">
+                <ul class="card-class">
+                    <li class="title">
+                        <h2>Identities</h2>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">B</a>
+                        <a href="javascript:void(0)">
+                            <span>NTU</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">C</a>
+                        <a href="javascript:void(0)">
+                            <span>BITAH</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span>Yahoo!</span>
+                        </a>
                     </li>
                 </ul>
-                <div class="cards yui3-g">
-                    <% for (var i = 0; i < people.length; i ++) { %>
-                        <div class="yui3-u">
-                            <h3><%= people[i].name %></h3>
-                            <h5><%= people[i].company %></h5>
-                            <h5><%= people[i].position %></h5>
-                        </div>
-                    <% } %>
-                    <p class="yui3-u">
-                        <i></i>
-                        <span class="content">
-                            <span class="name"></span>
-                            <span class="company"></span>
-                            <span class="position"></span>
-                        </span>
-                    </p>
+                <ul class="tags">
+                    <li class="title">
+                        <h2>Tags</h2>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span>Table Tennis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span>NTU</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span>Girl</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="yui3-u page">
+                <div class="nav">
+                    <a class="main-panel" href="javascript:void(0)">
+                        <span>≡</span>
+                    </a>
+                    <a class="tag-panel" href="javascript:void(0)">
+                        <span>Tags</span>
+                    </a>
+                    <form>
+                        <input class="search" type="search" />
+                        <input type="submit" value="Search" />
+                    </form>
+                </div>
+                <div class="main">
+                    <ul class="cardbox clearfix">
+                        <li class="selected">
+                            <a href="javascript:void(0)">A</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">B</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">C</a>
+                        </li>
+                    </ul>
+                    <div class="cards yui3-g">
+                        <% for (var i = 0; i < people.length; i ++) { %>
+                            <div class="yui3-u">
+                                <h3><%= people[i].name %></h3>
+                                <h5><%= people[i].company %></h5>
+                                <h5><%= people[i].position %></h5>
+                            </div>
+                        <% } %>
+                        <p class="yui3-u">
+                            <i></i>
+                            <span class="content">
+                                <span class="name"></span>
+                                <span class="company"></span>
+                                <span class="position"></span>
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
         <script type="text/javascript">
             var people = [], i = 0;

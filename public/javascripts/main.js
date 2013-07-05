@@ -6,7 +6,7 @@
 
     $('.main-panel').click(function (event) {
         if (!$('.tags').hasClass('reveal')) {
-            $('body').toggleClass('reveal-panel');
+            $('.container').toggleClass('reveal-panel');
             $('.card-class').toggleClass('reveal');
             event.stopPropagation();
         }
@@ -14,14 +14,14 @@
 
     $('.tag-panel').click(function (event) {
         if (!$('.card-class').hasClass('reveal')) {
-            $('body').toggleClass('reveal-panel');
+            $('.container').toggleClass('reveal-panel');
             $('.tags').toggleClass('reveal');
             event.stopPropagation();
         }
     });
 
     $('.cards').delegate('div', 'click', function (event) {
-        if (!$('body').hasClass('reveal-panel')) {
+        if (!$('.container').hasClass('reveal-panel')) {
             var div = $(event.currentTarget),
                 p = $('.cards p').eq(0),
                 arrow = $('.cards i'),
@@ -74,9 +74,9 @@
 
     $('.page').click(function () {
         // console.log('click page');
-        if ($('body').hasClass('reveal-panel')) {
+        if ($('.container').hasClass('reveal-panel')) {
             // console.log('has reveal-panel');
-            $('body').removeClass('reveal-panel');
+            $('.container').removeClass('reveal-panel');
             $('.card-class').removeClass('reveal');
             $('.tags').removeClass('reveal');
         }

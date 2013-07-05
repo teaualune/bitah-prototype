@@ -4,6 +4,7 @@ body {
 }
 body,
 html,
+.body,
 .panel,
 .page {
   height: 100%;
@@ -19,6 +20,10 @@ a:hover {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+.body {
+  overflow-x: hidden;
 }
 .clearfix {
   zoom: 1;
@@ -32,11 +37,11 @@ ul {
 }
 .panel {
   width: 0;
-  -webkit-transition: width 0.3s;
+  -webkit-transition: width 0s;
 }
 .panel ul {
-  display: none;
-  list-style: none;
+  visibility: hidden;
+  height: 0;
   opacity: 0;
 }
 .panel li {
@@ -44,9 +49,29 @@ ul {
   text-align: center;
   padding: 20px 0;
 }
+.panel .title {
+  line-height: 3em;
+}
 .page {
   width: 100%;
-  -webkit-transition: width 0.3s;
+}
+.reveal-panel {
+  padding-left: 200px;
+  margin-right: -200px;
+}
+.reveal-panel .panel {
+  width: 200px;
+  -webkit-transition: width 0.5s;
+  margin-left: -200px;
+}
+.reveal-panel .panel ul.reveal {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s 0.3s;
+}
+.reveal-panel .page {
+  opacity: 0.3;
 }
 .nav {
   width: 100%;
@@ -77,25 +102,12 @@ ul {
   background-color: #eee;
   width: 200px;
 }
-.reveal-panel .panel {
-  width: 20%;
-}
-.reveal-panel .panel ul.reveal {
-  display: block;
-  opacity: 1;
-  -webkit-transition: opacity 0.1s 0.2s;
-}
-.reveal-panel .page {
-  width: 80%;
-  opacity: 0.3;
-}
 .cardbox {
   background-color: #cdcdcd;
 }
 .cardbox li {
-  list-style: none;
   float: left;
-  min-width: 160px;
+  width: 30%;
   text-align: center;
 }
 .cardbox li:hover,
